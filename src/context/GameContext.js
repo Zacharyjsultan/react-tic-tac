@@ -1,4 +1,4 @@
-import { Children, createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 
 const GameContext = createContext();
 
@@ -16,11 +16,11 @@ const GameProvider = ({ children }) => {
   );
 };
 
-const useGame = () => {
-  const useGameContext = useContext(GameContext);
-  if (useGameContext === undefined) {
+const useGameContext = () => {
+  const useGame = useContext(GameContext);
+  if (useGame === undefined) {
     throw new Error('');
   }
 };
 
-export { useGame, GameProvider };
+export { useGameContext, GameProvider, GameContext };
