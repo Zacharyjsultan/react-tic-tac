@@ -1,7 +1,12 @@
 .App {
   text-align: center;
   background: border-box rgb(35, 138, 255);
-  padding: 10px;
+  padding: 50px;
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+  height: fit-content;
+  width: fit-content;
 }
 
 .App-logo {
