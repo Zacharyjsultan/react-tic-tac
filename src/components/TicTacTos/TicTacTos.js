@@ -1,8 +1,8 @@
-import React, { useContext } from 'react';
-import { GameContext } from '../../context/GameContext';
+import React from 'react';
+import { useGameContext } from '../../context/GameContext';
 
 export default function TicTacTos({ box, mark }) {
-  const { moveMade } = useContext(GameContext);
+  const { moveMade } = useGameContext;
   return (
     <div className="xo" onClick={() => moveMade(box)}>
       {mark}

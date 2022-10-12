@@ -3,10 +3,10 @@ import { useGameContext } from '../../context/GameContext';
 import TicTacTos from '../TicTacTos/TicTacTos';
 
 export default function Board() {
-  const { ticTac } = useGameContext();
+  const { board } = useGameContext();
   return (
     <div className="board">
-      {ticTac.map(({ box, mark }) => (
+      {board.map(({ box, mark }) => (
         <TicTacTos key={box} box={box} mark={mark} />
       ))}
     </div>
