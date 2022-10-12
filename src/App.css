@@ -7,6 +7,9 @@
   justify-content: center;
   height: fit-content;
   width: fit-content;
+  box-shadow: -1px -1px 15px 20px rgba(58, 76, 202, 0.75);
+  -webkit-box-shadow: -1px -1px 15px 20px rgba(58, 76, 202, 0.75);
+  -moz-box-shadow: -1px -1px 15px 20px rgba(58, 76, 202, 0.75);
 }
 
 .App-logo {
@@ -42,4 +45,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+.message {
+  padding: 50px;
+  margin: 30px;
+  font-size: 40px;
 }

@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useState } from 'react';
 
 const GameContext = createContext();
 
@@ -6,19 +6,19 @@ const GameProvider = ({ children }) => {
   const initialState = new Array(9).fill().map((val, idx) => ({ space: idx, content: '' }));
 
   const [board, setBoard] = useState(initialState);
-  const [message, setMessage] = useState('O');
-  const [activePlayer, setActivePlayer] = useState();
-  const [active, setActive] = useState('true');
+  const [activePlayer, setActivePlayer] = useState('O');
+  const [message, setMessage] = useState(`Hurry up, ${activePlayer}...`);
+  const [active, setActive] = useState(true);
 
   return (
     <GameContext.Provider
       value={{
         board,
         setBoard,
-        message,
-        setMessage,
         activePlayer,
         setActivePlayer,
+        message,
+        setMessage,
         active,
         setActive,
       }}
@@ -28,11 +28,4 @@ const GameProvider = ({ children }) => {
   );
 };
 
-const useGameContext = () => {
-  const useGame = useContext(GameContext);
-  if (useGame === undefined) {
-    throw new Error('holy canoli keep the ravioli useGameContext within a provider');
-  }
-};
-
-export { useGameContext, GameProvider, GameContext };
+export { GameContext, GameProvider };
