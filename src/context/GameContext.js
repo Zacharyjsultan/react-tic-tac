@@ -3,8 +3,10 @@ import { createContext, useContext, useState } from 'react';
 const GameContext = createContext();
 
 const GameProvider = ({ children }) => {
-  const [board, setBoard] = useState();
-  const [message, setMessage] = useState();
+  const initialState = new Array(9).fill().map((val, idx) => ({ space: idx, content: '' }));
+
+  const [board, setBoard] = useState(initialState);
+  const [message, setMessage] = useState('O');
   const [activePlayer, setActivePlayer] = useState();
   const [active, setActive] = useState('true');
 
