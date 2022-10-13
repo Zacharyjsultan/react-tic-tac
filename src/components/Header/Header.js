@@ -7,7 +7,10 @@ export default function Header() {
   return (
     <>
       <h2 className="message">{message}</h2>
-      <button onClick={newGame}> Tic Tac?</button>
+      <button className="butt" onClick={newGame}>
+        {' '}
+        Tic Tac?
+      </button>
     </>
   );
 }
