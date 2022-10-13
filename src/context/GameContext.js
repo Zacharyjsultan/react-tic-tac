@@ -25,6 +25,79 @@ const GameProvider = ({ children }) => {
     setActive(true);
     setMessage(`Hurry up ${activePlayer}`);
   };
+
+  const winner = () => {
+    if (
+      board[0].mark !== '' &&
+      board[0].mark === board[1].mark &&
+      board[1].mark === board[2].mark
+    ) {
+      return board[2].mark;
+    } else if (
+      board[3].mark !== '' &&
+      board[3].mark === board[4].mark &&
+      board[4].mark === board[5].mark
+    ) {
+      return board[5].mark;
+    } else if (
+      board[6].mark !== '' &&
+      board[6].mark === board[7].mark &&
+      board[7].mark === board[8].mark
+    ) {
+      return board[8].mark;
+    } else if (
+      board[0].mark !== '' &&
+      board[0].mark === board[3].mark &&
+      board[3].mark === board[6].mark
+    ) {
+      return board[6].mark;
+    } else if (
+      board[1].mark !== '' &&
+      board[1].mark === board[4].mark &&
+      board[4].mark === board[7].mark
+    ) {
+      return board[7].mark;
+    } else if (
+      board[2].mark !== '' &&
+      board[2].mark === board[5].mark &&
+      board[5].mark === board[8].mark
+    ) {
+      return board[8].mark;
+    } else if (
+      board[0].mark !== '' &&
+      board[0].mark === board[4].mark &&
+      board[4].mark === board[8].mark
+    ) {
+      return board[8].mark;
+    } else if (
+      board[2].mark !== '' &&
+      board[2].mark === board[4].mark &&
+      board[4].mark === board[6].mark
+    ) {
+      return board[6].mark;
+    } else {
+      return false;
+    }
+  };
+
+  const stalemate = () => {
+    return board.filter((box) => box.mark === '').length === 0;
+  };
+
+  const matchStatus = () => {
+    if (!active) return;
+    const win = winner();
+    if (win) {
+      setMessage(`I guess you won, ${win}!`);
+      setActive(false);
+    } else if (stalemate()) {
+      setMessage('STALEMATE!');
+      setActive(false);
+    }
+  };
+
+  matchStatus();
+
   return (
     <GameContext.Provider
       value={{
