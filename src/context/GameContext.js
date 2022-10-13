@@ -10,12 +10,12 @@ const GameProvider = ({ children }) => {
   const [message, setMessage] = useState(`Hurry up, ${activePlayer}...`);
   const [active, setActive] = useState(true);
 
-  const moveMade = (num) => {
+  const moveMade = (check) => {
     if (!active) return;
-    if (board[num].mark !== '') return;
+    if (board[check].mark !== '') return;
 
     setBoard((prev) =>
-      prev.map((space) => (space.box === num ? { box: num, mark: activePlayer } : space))
+      prev.map((space) => (space.box === check ? { box: check, mark: activePlayer } : space))
     );
     setActivePlayer(activePlayer === 'O' ? 'X' : 'O');
   };
