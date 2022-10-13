@@ -1,5 +1,19 @@
 .App {
   text-align: center;
+  background: border-box rgb(35, 138, 255);
+  padding: 150px;
+  margin: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: fit-content;
+  width: fit-content;
+  box-shadow: -1px -1px 15px 20px rgba(58, 76, 202, 0.75);
+  -webkit-box-shadow: -1px -1px 15px 20px rgba(58, 76, 202, 0.75);
+  -moz-box-shadow: -1px -1px 15px 20px rgba(58, 76, 202, 0.75);
+  text-shadow: 0 0 7px rgb(255, 255, 255), 0 0 10px #fff, 0 0 21px #fff, 0 0 42px rgb(249, 0, 0),
+    0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+  border-radius: 20px;
 }
 
 .App-logo {
@@ -35,4 +49,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+.message {
+  padding: 50px;
+  margin: 30px;
+  font-size: 40px;
+}
+
+h1 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 2.2em;
+  height: fit-content;
 }

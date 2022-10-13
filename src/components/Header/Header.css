@@ -1,0 +1,19 @@
+.butt {
+  box-shadow: -11px 10px 23px 20px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -11px 10px 23px 20px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -11px 10px 23px 20px rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+  padding: 10px;
+  height: 50px;
+  width: 150px;
+  border-radius: 30px;
+
+  margin: 55px;
+}
+.message {
+  display: flex;
+  flex: auto;
+  padding: 10px;
+  text-align: center;
+  display: block;
+}
