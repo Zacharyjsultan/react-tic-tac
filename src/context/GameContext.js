@@ -10,27 +10,26 @@ const GameProvider = ({ children }) => {
   const [message, setMessage] = useState(`Hurry up, ${activePlayer}...`);
   const [active, setActive] = useState(true);
 
+  const moveMade = (num) => {
+    if (!active) return;
+    if (board[num].mark !== '') return;
+
+    setBoard((prev) =>
+      prev.map((space) => (space.box === num ? { box: num, mark: activePlayer } : space))
+    );
+    setActivePlayer(activePlayer === 'O' ? 'X' : 'O');
+  };
+
   const newGame = () => {
     setBoard(initialState);
     setActive(true);
     setMessage(`Hurry up ${activePlayer}`);
   };
-
-  const updateMark = (num) => {
-    if (!active) return;
-    if (board[num].mark !== '') return;
-
-    setBoard((prev) =>
-      prev.map((space) => (space.box === num ? { box: num, mark: active } : space))
-    );
-    setActivePlayer(activePlayer === 'X' ? 'O' : 'X');
-  };
-
   return (
     <GameContext.Provider
       value={{
         newGame,
-        updateMark,
+        moveMade,
         board,
         setBoard,
         activePlayer,
